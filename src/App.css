@@ -1,0 +1,386 @@
+/* ================= ROOT VARIABLES ================= */
+/* Define reusable theme variables (colors, spacing, shadows) */
+:root {
+  --bg: #f3f7fc;
+  --card: rgba(255, 255, 255, 0.88);
+  --card-solid: #ffffff;
+  --text: #14213d;
+  --muted: #6b7280;
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --accent: #0f172a;
+  --border: rgba(148, 163, 184, 0.18);
+  --shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+  --radius: 24px;
+}
+
+/* Apply consistent box model */
+* {
+  box-sizing: border-box;
+}
+
+/* ================= GLOBAL STYLES ================= */
+body {
+  margin: 0;
+
+  /* Modern font stack */
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Soft gradient background */
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 30%),
+    radial-gradient(circle at top right, rgba(15, 23, 42, 0.08), transparent 28%),
+    linear-gradient(180deg, #eef4fb 0%, #f8fbff 100%);
+
+  color: var(--text);
+}
+
+/* Inherit font styles for inputs and buttons */
+button,
+input {
+  font: inherit;
+}
+
+/* App container */
+.app-shell {
+  min-height: 100vh;
+}
+
+/* ================= HERO HEADER ================= */
+.hero {
+  position: relative;
+  overflow: hidden;
+
+  /* Padding for spacing */
+  padding: 80px 20px 120px;
+
+  /* Dark gradient background */
+  background: linear-gradient(135deg, #081225 0%, #0f172a 55%, #12366f 100%);
+  color: #fff;
+}
+
+/* Decorative gradient overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.25), transparent 22%),
+    radial-gradient(circle at 80% 30%, rgba(96, 165, 250, 0.2), transparent 20%);
+
+  pointer-events: none;
+}
+
+/* Center hero content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Small badge label */
+.hero-badge {
+  display: inline-block;
+  padding: 8px 14px;
+  margin-bottom: 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+/* Main heading */
+.hero h1 {
+  margin: 0 0 14px;
+  font-size: clamp(40px, 6vw, 68px);
+  font-weight: 800;
+  color: white;
+  letter-spacing: -1px;
+}
+
+/* Hero description */
+.hero p {
+  max-width: 700px;
+  margin: 0 auto;
+
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* ================= DASHBOARD LAYOUT ================= */
+.dashboard {
+  width: min(1180px, calc(100% - 32px));
+
+  /* Overlap hero section */
+  margin: -70px auto 50px;
+
+  display: grid;
+  grid-template-columns: 1.5fr 0.9fr;
+  gap: 24px;
+
+  align-items: start;
+  position: relative;
+  z-index: 5;
+}
+
+/* Card styling (glass effect) */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+}
+
+/* Panels */
+.main-panel,
+.history-panel {
+  padding: 32px;
+}
+
+/* Ensure main panel has minimum height */
+.main-panel {
+  min-height: 580px;
+}
+
+/* Full-width history panel */
+.history-panel {
+  grid-column: 1 / -1;
+}
+
+/* Section header */
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.panel-header h2 {
+  margin: 0 0 8px;
+  font-size: 28px;
+  color: var(--accent);
+}
+
+.panel-header p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* ================= STATS PANEL ================= */
+.stats-panel {
+  display: grid;
+  gap: 20px;
+}
+
+/* Small stat cards */
+.mini-card {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+
+  padding: 24px;
+
+  box-shadow: var(--shadow);
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Hover animation */
+.mini-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
+}
+
+/* Label text */
+.mini-label {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+  margin-bottom: 12px;
+}
+
+/* Value text */
+.mini-card h3 {
+  margin: 0;
+  font-size: 28px;
+  color: var(--accent);
+}
+
+/* ================= TIMER ================= */
+.timer-container {
+  text-align: center;
+  margin: 22px 0 30px;
+}
+
+/* Circular timer UI */
+.timer-circle {
+  width: 240px;
+  height: 240px;
+  margin: 0 auto;
+
+  border-radius: 50%;
+
+  /* Gradient background */
+  background:
+    radial-gradient(circle at 30% 30%, #3b82f6, #1d4ed8 58%, #163ea9 100%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow:
+    0 18px 40px rgba(37, 99, 235, 0.28),
+    inset 0 1px 10px rgba(255, 255, 255, 0.15);
+
+  position: relative;
+}
+
+/* Outer ring effect */
+.timer-circle::before {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  border: 1px solid rgba(37, 99, 235, 0.15);
+}
+
+/* Timer text */
+.timer-text {
+  margin: 0;
+  font-size: 56px;
+  font-weight: 800;
+  color: white;
+}
+
+/* Status text */
+.status {
+  margin-top: 18px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* Running state */
+.status.running {
+  color: #16a34a;
+}
+
+/* Stopped state */
+.status.stopped {
+  color: #dc2626;
+}
+
+/* ================= CONTROLS ================= */
+.controls {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* Input label */
+.label {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Input field */
+.input {
+  width: 100%;
+  height: 54px;
+
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+
+  padding: 0 18px;
+
+  transition: all 0.25s ease;
+}
+
+/* Input focus effect */
+.input:focus {
+  border-color: rgba(37, 99, 235, 0.5);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+/* Button container */
+.buttonRow {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 14px;
+  padding: 10px 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Primary button */
+.btn.primary {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+}
+
+/* ================= SESSION LIST ================= */
+.session-list {
+  display: grid;
+  gap: 16px;
+}
+
+/* Session card */
+.session-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px;
+
+  border-radius: 18px;
+
+  transition: all 0.25s ease;
+}
+
+/* Hover effect */
+.session-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Delete button */
+.delete-btn {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 980px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .timer-circle {
+    width: 200px;
+    height: 200px;
+  }
+
+  .timer-text {
+    font-size: 44px;
+  }
+}
