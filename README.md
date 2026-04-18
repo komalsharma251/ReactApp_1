@@ -20,7 +20,7 @@ Longest session
 Frontend: React (Hooks)
 Language: TypeScript
 Build Tool: Vite
-Styling: CSS (Custom, responsive UI)
+Styling: CSS (Custom UI)
 State Management: useState, useEffect
 Storage: Browser localStorage
 📂 Project Structure
@@ -50,7 +50,7 @@ http://localhost:5173/
 🧠 How It Works
 User enters a task and starts the timer
 Timer runs using setInterval (updates every second)
-On stopping:
+When stopped:
 Session is saved with task, duration, and timestamp
 Data is stored in localStorage
 Session history is displayed dynamically
@@ -59,26 +59,25 @@ reduce() → total time
 Math.max() → longest session
 📸 Screenshots
 
-Add screenshots here if required for submission
+Add screenshots here if required
 
 📈 Future Improvements
-⏸ Pause / Resume functionality
-⭕ Animated circular progress timer
-🌙 Dark mode toggle
+⏸ Pause / Resume feature
+⭕ Animated circular timer
+🌙 Dark mode
 📊 Charts (data visualization)
-🔔 Sound / notifications
-📅 Daily tracking
+🔔 Sound notifications
+📅 Daily / weekly tracking
 🎯 Learning Outcomes
 
 This project demonstrates:
 
 React component-based architecture
 TypeScript type safety
-State management with Hooks
-Side effects using useEffect
+State management using Hooks
+Side-effect handling with useEffect
 Local storage integration
-UI/UX design principles
-Responsive layout techniques
+Responsive UI design
 👨‍💻 Author
 
 Komal Sharma
