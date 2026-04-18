@@ -5,7 +5,7 @@ FocusFlow is a modern React + TypeScript productivity application designed to he
 This app allows users to start and stop focus sessions, track duration, and review past activity through a clean and responsive dashboard interface.
 
 🚀 Features
-⏱ Real-time timer (MM format)
+⏱ Real-time timer (MM:SS format)
 ▶️ Start and Stop focus sessions
 📝 Task-based session tracking
 💾 Persistent session storage using localStorage
@@ -17,26 +17,26 @@ Longest session
 🎨 Modern UI with responsive design
 ⚡ Smooth user interactions and hover effects
 🛠️ Tech Stack
-Frontend: React (with Hooks)
+Frontend: React (Hooks)
 Language: TypeScript
 Build Tool: Vite
-Styling: CSS (Custom, responsive, modern UI)
-State Management: React useState + useEffect
+Styling: CSS (Custom, responsive UI)
+State Management: useState, useEffect
 Storage: Browser localStorage
 📂 Project Structure
 src/
 │
 ├── components/
-│   ├── TimerDisplay.tsx      # Displays live timer and status
-│   ├── FocusControls.tsx     # Handles input and start/stop actions
-│   └── SessionList.tsx       # Displays session history
+│   ├── TimerDisplay.tsx
+│   ├── FocusControls.tsx
+│   └── SessionList.tsx
 │
 ├── types/
-│   └── session.ts            # Type definition for Session object
+│   └── session.ts
 │
-├── App.tsx                   # Main application logic and layout
-├── App.css                   # Global styles and layout design
-└── main.tsx                  # Entry point
+├── App.tsx
+├── App.css
+└── main.tsx
 ⚙️ Installation & Setup
 1. Clone the repository
 git clone https://github.com/your-username/focusflow.git
@@ -48,34 +48,37 @@ npm run dev
 4. Open in browser
 http://localhost:5173/
 🧠 How It Works
-User enters a task name and starts the timer
-Timer increments every second using setInterval
+User enters a task and starts the timer
+Timer runs using setInterval (updates every second)
 On stopping:
 Session is saved with task, duration, and timestamp
 Data is stored in localStorage
-Session history is rendered dynamically
-Statistics are calculated using array methods like reduce() and Math.max()
+Session history is displayed dynamically
+Statistics are calculated using:
+reduce() → total time
+Math.max() → longest session
 📸 Screenshots
 
-(Add screenshots here if required for submission)
+Add screenshots here if required for submission
 
 📈 Future Improvements
 ⏸ Pause / Resume functionality
 ⭕ Animated circular progress timer
 🌙 Dark mode toggle
-📊 Data visualization (charts)
-🔔 Notification or sound alerts
-📅 Daily / weekly tracking
+📊 Charts (data visualization)
+🔔 Sound / notifications
+📅 Daily tracking
 🎯 Learning Outcomes
 
 This project demonstrates:
 
-Component-based architecture in React
-Type safety using TypeScript
-State and side-effect management with Hooks
-Data persistence with localStorage
-Clean UI/UX design principles
-Responsive layout implementation
+React component-based architecture
+TypeScript type safety
+State management with Hooks
+Side effects using useEffect
+Local storage integration
+UI/UX design principles
+Responsive layout techniques
 👨‍💻 Author
 
 Komal Sharma
